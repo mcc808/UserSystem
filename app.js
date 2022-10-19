@@ -12,8 +12,13 @@ function User(email,password,firstname,lastname,age,address,phone,payment,color)
     this.color = color;
 }
 
-//get the values from the inputs
-
+function isValid(user){
+    let valid = true;
+    if(user.email=="" || user.password==""){
+        valid = false;
+    }
+    return valid; 
+}
 
 //register function
 
@@ -28,11 +33,17 @@ function register(){
     let inputPhone = $("#txtPhone").val();
     let inputPayment = $("#selPayment").val();
     let inputColor = $("#selColor").val();
-
+    
+    if(isValid(user)==true){
+        saveUser(user); 
+    }else{
+        alert("Please enter a valid username");
+    }
+   
     //create the obj using the constructor
     let user = new User(inputEmail,inputPassword,inputFirstName,inputLastName,inputAge,inputAddress,inputPhone,inputPayment,inputColor);
     //display the obj on the console
-    console.log(user);
+    //console.log(user);
     //create a btn on the register.html and trigger the registration function
 }
 
