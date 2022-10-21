@@ -34,17 +34,18 @@ function register(){
     let inputPayment = $("#selPayment").val();
     let inputColor = $("#selColor").val();
     
-    if(isValid(user)==true){
-        saveUser(user); 
-    }else{
-        alert("Please enter a valid username");
-    }
-   
     //create the obj using the constructor
     let user = new User(inputEmail,inputPassword,inputFirstName,inputLastName,inputAge,inputAddress,inputPhone,inputPayment,inputColor);
     //display the obj on the console
     //console.log(user);
     //create a btn on the register.html and trigger the registration function
+
+    if(isValid(user)==true){
+        saveUser(user); 
+    }else{
+        alert("Please enter a valid username");
+    }
+    
 }
 
 
