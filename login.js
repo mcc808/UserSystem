@@ -6,13 +6,11 @@ function login(){
 
 let users = readUsers();
 
-for(let){
+for(let i=0;users.lenght;i++){
+    let user = users[i];
     
-    if(!users){
-        return[];
-    }else{
-        let list = JSON.parse(users);
-        return list;
+    if(user.password==password && user.email==userName){
+        window.location="users.html"
     }
-}
+       
 }
